@@ -14,7 +14,7 @@ class UlyssesModels:
     """The main class for this package. Used to manage the Ulysses models repository."""
 
     def __init__(self, output_folder: Union[Path, str]):
-        """Initialize the class with its condiguration.
+        """Initialize the class with its configuration.
 
         Args:
             output_folder: the path for a folder where the models will be locally saved.

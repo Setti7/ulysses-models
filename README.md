@@ -17,8 +17,8 @@ print("Model path: ", path)
  - [X] Add to github
  - [X] Add pre-commit hooks
  - [X] Add README
- - [ ] Publish to pypi
+ - [ ] Create CI/CD pipeline (with verification for linting/formatting)
  - [ ] Add unit tests
  - [ ] Add tox tests
- - [ ] Create CI/CD pipeline (with verification for linting/formatting)
  - [ ] Add user documentation
+ - [ ] Publish to pypi
