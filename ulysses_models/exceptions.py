@@ -1,5 +1,7 @@
 class ModelNotFound(Exception):
-    def __init__(self, model_name: str) -> None:
+    """Exception raised when a model was not found on the repository."""
+
+    def __init__(self, model_name: str) -> None:  # noqa: D107
         super().__init__(
             f"Model {model_name} was not found. "
             + "Use UlyssesModels.list to list all available models."
@@ -7,7 +9,9 @@ class ModelNotFound(Exception):
 
 
 class NotAuthorized(Exception):
-    def __init__(self) -> None:
+    """Exception raised when the current gcloud user isn't authorized to download the models."""
+
+    def __init__(self) -> None:  # noqa: D107
         super().__init__(
             """
             Your account is not authorized to access the Ulysses model repository.

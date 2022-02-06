@@ -12,7 +12,19 @@ GCLOUD_BUCKET = "ulysses-test"
 
 
 class UlyssesModels:
+    """The main class for this package. Used to manage the Ulysses models repository."""
+
     def __init__(self, output_folder: Union[Path, str]):
+        """Initialize the class with its condiguration.
+
+        Args:
+            output_folder: the path for a folder where the models will be locally saved.
+
+        Raises:
+            TypeError: if output_folder is not a string or a pathlib.Path object.
+            NotAuthorized: the current gcloud user is not authorized to access the models bucket.
+
+        """
         if isinstance(output_folder, str):
             self._output_folder = Path(output_folder)
         elif isinstance(output_folder, Path):
@@ -35,6 +47,7 @@ class UlyssesModels:
 
         Returns:
             A list of all the names of the available models.
+
         """
         names = []
 
@@ -49,6 +62,10 @@ class UlyssesModels:
 
         Returns:
             The absolute path to the model.
+
+        Raises:
+            ModelNotFound: the model with model_name doesn't exist in the repository.
+
         """
         output_path = self._output_folder.joinpath(model_name)
 

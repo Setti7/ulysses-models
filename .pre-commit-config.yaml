@@ -25,3 +25,10 @@ repos:
       - id: trailing-whitespace
         args: [ --markdown-linebreak-ext=md ]
       - id: end-of-file-fixer
+
+  -   repo: https://github.com/pycqa/pydocstyle
+      rev: 6.1.1
+      hooks:
+      -   id: pydocstyle
+          args:
+          - --ignore=D100,D203,D104,D407,D213,D406
