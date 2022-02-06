@@ -24,7 +24,6 @@ class UlyssesModels:
         # if it already exists
         self._output_folder.mkdir(parents=True, exist_ok=True)
 
-
         try:
             self._client = storage.Client(GCLOUD_PROJECT)
             self._bucket = self._client.get_bucket(GCLOUD_BUCKET)
@@ -63,8 +62,3 @@ class UlyssesModels:
             blob.download_to_filename(output_path)
 
         return output_path.absolute()
-
-
-if __name__ == "__main__":
-    path = UlyssesModels("./output").download("dados.zip")
-    print("Model path: ", path)
