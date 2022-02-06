@@ -7,10 +7,7 @@ setup(
     description="Library to manage the Ulysses models repository.",
     author="André Niero Setti <andre.niero.setti@usp.br>",
     license="MIT",
-    install_requires=[
-        "google-cloud-storage==2.1.0",
-        "google-api-core==2.5.0",
-    ],
+    install_requires=["google-cloud-storage==2.1.0"],
     setup_requires=["pytest-runner"],
     tests_require=["pytest==7.0.0"],
     test_suite="tests",

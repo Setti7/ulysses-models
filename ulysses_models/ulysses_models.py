@@ -3,7 +3,6 @@ from typing import List, Union
 
 from google.api_core.exceptions import Forbidden
 from google.cloud import storage
-from google.cloud.storage.blob import Blob
 
 from ulysses_models.exceptions import ModelNotFound, NotAuthorized
 
@@ -49,13 +48,7 @@ class UlyssesModels:
             A list of all the names of the available models.
 
         """
-        names = []
-
-        blob: Blob
-        for blob in self._client.list_blobs(GCLOUD_BUCKET):
-            names.append(blob.name)
-
-        return names
+        return [blob.name for blob in self._client.list_blobs(GCLOUD_BUCKET)]
 
     def download(self, model_name: str, ignore_cache: bool = False) -> str:
         """Download a model by its name and save it locally.
