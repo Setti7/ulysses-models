@@ -7,6 +7,8 @@ Library to manage the Ulysses models repository.
 Download a model named "LegalBERT-1" and save it locally to the models folder.
 
 ```python
+from ulysses_models import UlyssesModels
+
 path = UlyssesModels("./models").download("LegalBERT-1")
 print("Model path: ", path)
 ```
