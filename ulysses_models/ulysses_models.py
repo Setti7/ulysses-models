@@ -1,10 +1,11 @@
-from typing import Union
-from google.cloud import storage
 from pathlib import Path
-from google.cloud.storage.blob import Blob
-from google.api_core import exceptions
+from typing import Union, List
 
-from exceptions import ModelNotFound, NotAuthorized
+from google.api_core.exceptions import Forbidden
+from google.cloud import storage
+from google.cloud.storage.blob import Blob
+
+from ulysses_models.exceptions import ModelNotFound, NotAuthorized
 
 GCLOUD_PROJECT = "focus-chain"
 GCLOUD_BUCKET = "ulysses-test"
@@ -27,10 +28,10 @@ class UlyssesModels:
         try:
             self._client = storage.Client(GCLOUD_PROJECT)
             self._bucket = self._client.get_bucket(GCLOUD_BUCKET)
-        except exceptions.Forbidden as e:
+        except Forbidden as e:
             raise NotAuthorized() from e
 
-    def list(self) -> list[str]:
+    def list(self) -> List[str]:
         """List all available models.
 
         Returns:
