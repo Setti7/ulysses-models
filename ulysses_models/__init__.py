@@ -1,2 +1,2 @@
-from ulysses_models.ulysses_models import UlyssesModels
-from ulysses_models.exceptions import *
+from ulysses_models.exceptions import *  # noqa
+from ulysses_models.ulysses_models import UlyssesModels  # noqa

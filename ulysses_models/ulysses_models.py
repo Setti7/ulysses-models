@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import Union, List
+from typing import List, Union
 
 from google.api_core.exceptions import Forbidden
 from google.cloud import storage
@@ -18,7 +18,7 @@ class UlyssesModels:
         elif isinstance(output_folder, Path):
             self._output_folder = output_folder
         else:
-            raise TypeError("output_folder must be an instance of pathlib.Path or a ")
+            raise TypeError("output_folder must be a string or an instance of pathlib.Path.")
 
         # Create the output folder and its parents if necessary and don't throw any errors
         # if it already exists
@@ -61,4 +61,4 @@ class UlyssesModels:
 
             blob.download_to_filename(output_path)
 
-        return output_path.absolute()
+        return str(output_path.absolute())

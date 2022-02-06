@@ -14,9 +14,9 @@ print("Model path: ", path)
 ```
 
 #### TODO:
- - [ ] Add to github
- - [ ] Add pre-commit hooks
- - [ ] Add README
+ - [X] Add to github
+ - [X] Add pre-commit hooks
+ - [X] Add README
  - [ ] Publish to pypi
  - [ ] Add unit tests
  - [ ] Add tox tests

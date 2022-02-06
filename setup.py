@@ -1,6 +1,5 @@
 from setuptools import find_packages, setup
 
-
 setup(
     name="ulysses-models",
     packages=find_packages(include=["ulysses_models"]),
