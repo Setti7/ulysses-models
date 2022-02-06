@@ -12,11 +12,11 @@ print("Model path: ", path)
 ```
 
 #### TODO:
- - [ ] Add tox tests
- - [ ] Add unit tests
  - [ ] Add to github
- - [ ] Publish to pypi
- - [ ] Create CI/CD pipeline (with verification for linting/formatting)
- - [ ] Add README
- - [ ] Add user documentation
  - [ ] Add pre-commit hooks
+ - [ ] Add README
+ - [ ] Publish to pypi
+ - [ ] Add unit tests
+ - [ ] Add tox tests
+ - [ ] Create CI/CD pipeline (with verification for linting/formatting)
+ - [ ] Add user documentation
